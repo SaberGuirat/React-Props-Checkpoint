@@ -1,25 +1,26 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import Profile from "./Components/Profile/Profile";
+import Pic from "./Assets/profilPhoto.jpg";
+import Navbar from "./Components/Navbar/Navbar";
+import Footer from "./Components/Footer/Footer";
 
 function App() {
+  const alertMyName = (name) => alert(name);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+    <>
+      <Navbar />
+      <main>
+        <Profile
+          fullName="Saber Guirat"
+          bio="Born August 12,1992,Tunisia"
+          profession="Student"
+          alertMyName={alertMyName}
         >
-          Learn React
-        </a>
-      </header>
-    </div>
+          {Pic}
+        </Profile>
+      </main>
+      <Footer />
+    </>
   );
 }
 
